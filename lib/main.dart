@@ -1,8 +1,10 @@
+import 'package:codetest/core/services/background_service.dart';
 import 'package:codetest/features/splash/splas_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await BackgroundService().initialise();
 
   runApp(const MyApp());
 }

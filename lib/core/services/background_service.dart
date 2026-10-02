@@ -4,7 +4,6 @@ import 'dart:developer';
 import 'package:flutter_background_service/flutter_background_service.dart';
 
 class BackgroundService {
-
   Future<void> initialise() async {
     final service = FlutterBackgroundService();
 
@@ -33,15 +32,10 @@ class BackgroundService {
 
   @pragma('vm:entry-point')
   static Future<bool> onStart(ServiceInstance service) async {
-
     /// ===>>> 5-min tigger
-    Timer.periodic(
-      const Duration(minutes: 5),
-      (timer) async {
-        log('5 min done >>>>');
-
-      },
-    );
+    Timer.periodic(const Duration(minutes: 3), (timer) async {
+      log('3 min done >>>>');
+    });
 
     return true;
   }
